@@ -9,30 +9,29 @@ class AplikasiSaya extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Aplikasi Flutter Saya',
-              style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.blue, // Ganti dengan warna yang Anda inginkan
-        ),
-        body: TextFormField(
-          //obscureText: true,
-          //initialValue: 'andy',
-          maxLength: 12,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(color: Colors.blue),
-            ),
-            filled: true,
-            fillColor: const Color.fromARGB(255, 217, 238, 255),
-            hintText: 'Masukkan nama Anda',
-            labelText: 'Nama',
-            helperText: 'Masukkan hanya 10 karakter',
-            prefixIcon: Icon(Icons.supervisor_account), // Icon di sebelah kiri
-            //suffixIcon: Icon(Icons.close), // Icon di sebelah kanan
+          appBar: AppBar(
+            title: Text('Aplikasi Flutter Saya',
+                style: TextStyle(color: Colors.white)),
+            backgroundColor:
+                Colors.blue, // Ganti dengan warna yang Anda inginkan
           ),
-        ),
-      ),
+          body: Container(
+            width: 200,
+            height: 40,
+            child: ElevatedButton.icon(
+              onPressed: () {
+                print('Tombol Saya ditekan');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepOrange,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+              icon: Icon(Icons.person, color: Colors.white),
+              label: new Text('LOGIN', style: TextStyle(color: Colors.white)),
+            ),
+          )),
     );
   }
 }
